@@ -12,7 +12,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel.Home
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class HomeNearbyViewModel : BaseViewModel
     {
         public HomeNearbyViewModel(INavigationService navigationService) : base(navigationService)

@@ -8,7 +8,7 @@ using PropertyChanged;
 
 namespace CamReports.ViewModel
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public abstract class BaseViewModel : ViewModelBase
     {
         protected Services.INavigationService NavigationService;

@@ -7,7 +7,7 @@ using PropertyChanged;
 
 namespace CamReports.Services.Contacts
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class Contact
     {
         public string FirstName { get; set; }

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace CamReports.ViewModel.SendReport
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class PreviewReportViewModel : BaseViewModel
     {
         public PreviewReportViewModel(Services.INavigationService navigationService) : base(navigationService)

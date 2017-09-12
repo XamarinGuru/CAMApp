@@ -301,7 +301,7 @@ namespace CamReports.Services
         }
     }
 
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class CodeToSchedule
     {
         public string Code { get; set; }
@@ -548,7 +548,7 @@ namespace CamReports.Services
             CustomerEmail = reportInfo.CustomerEmail;
         }
 
-        [ImplementPropertyChanged]
+        //[ImplementPropertyChanged]
         public class Image
         {
             public string ImagePath { get; set; }
@@ -564,7 +564,7 @@ namespace CamReports.Services
         public List<CAMSvcSchedEmp> Children { get; set; }
     }
 
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class CAMSvcSchedEmp
     {
         public int ScheduleID { get; set; }
@@ -1226,7 +1226,7 @@ namespace CamReports.Services
                     {
                         var locator = CrossGeolocator.Current;
                         locator.DesiredAccuracy = 50;
-                        var position = await locator.GetPositionAsync(30000);
+                        var position = await locator.GetPositionAsync(TimeSpan.FromMilliseconds(30000));
 
                         if (position != null)
                             pin1 = new GeoCoordinate(position.Latitude, position.Longitude);

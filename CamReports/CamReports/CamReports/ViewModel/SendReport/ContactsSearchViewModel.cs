@@ -9,7 +9,7 @@ using PropertyChanged;
 
 namespace CamReports.ViewModel.SendReport
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class ContactsSearchViewModel : BaseViewModel
     {
         public ObservableCollection<Grouping<string, Contact>> Contacts;

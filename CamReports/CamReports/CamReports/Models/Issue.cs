@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace CamReports.Models
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class Issue
     {
         [PrimaryKey, AutoIncrement]

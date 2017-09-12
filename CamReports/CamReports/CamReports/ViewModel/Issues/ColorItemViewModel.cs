@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace CamReports.ViewModel.Issues
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class ColorItemViewModel
     {
         private static int _Id;

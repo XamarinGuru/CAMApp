@@ -19,7 +19,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel.SendReport
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class SendReportViewModel : BaseViewModel
     {
         private List<Issue> _Issues;

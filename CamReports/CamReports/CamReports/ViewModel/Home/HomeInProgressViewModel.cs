@@ -10,7 +10,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel.Home
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class HomeInProgressViewModel : BaseViewModel
     {
         private LocalDatabaseService _Database;

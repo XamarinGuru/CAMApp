@@ -11,7 +11,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class LoginViewModel : BaseViewModel
     {
         private Application _Application;
@@ -39,6 +39,10 @@ namespace CamReports.ViewModel
 
         public RelayCommand LoginCommand => new RelayCommand(async () =>
         {
+#if DEBUG
+            Login = "echavez";
+            Password = "Password8";
+#endif
             if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
             {
                 HasError = true;

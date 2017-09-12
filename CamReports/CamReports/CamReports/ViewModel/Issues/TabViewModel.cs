@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace CamReports.ViewModel.Issues
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class TabViewModel
     {
         private static int _Id;

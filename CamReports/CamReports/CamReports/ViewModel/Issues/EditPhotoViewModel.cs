@@ -10,7 +10,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel.Issues
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class EditPhotoViewModel : BaseViewModel
     {
         public EditPhotoViewModel(INavigationService navigationService) : base(navigationService)

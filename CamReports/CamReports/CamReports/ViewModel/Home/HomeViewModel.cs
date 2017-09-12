@@ -9,7 +9,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel.Home
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class HomeViewModel : BaseViewModel
     {
         public HomeViewModel(INavigationService navigationService) : base(navigationService)

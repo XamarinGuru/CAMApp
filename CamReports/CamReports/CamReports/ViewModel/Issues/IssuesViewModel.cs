@@ -12,7 +12,7 @@ using INavigationService = CamReports.Services.INavigationService;
 
 namespace CamReports.ViewModel.Issues
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class IssuesViewModel : BaseViewModel
     {
         private LocalDatabaseService _Database;

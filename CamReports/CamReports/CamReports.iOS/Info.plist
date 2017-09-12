@@ -15,7 +15,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>10.3</string>
+	<string>10.2</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -56,8 +56,8 @@
 	<string>To choose recipient emails</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Choose photos to send with report</string>
-  <key>NSMicrophoneUsageDescription</key>
-  <string>This app needs access to microphone.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs access to microphone.</string>
 	<key>kTCCServiceMediaLibrary</key>
 	<string>Choose photos to send with report</string>
 	<key>NSAppTransportSecurity</key>
@@ -83,18 +83,18 @@
 	</dict>
 	<key>CustomProperty</key>
 	<string></string>
-  <key>UIApplicationShortcutItems</key>
-  <array>
-    <dict>
-      <key>UIApplicationShortcutItemIconType</key>
-      <string>UIApplicationShortcutIconTypeAdd</string>
-      <key>UIApplicationShortcutItemSubtitle</key>
-      <string>adds a new item to your list</string>
-      <key>UIApplicationShortcutItemTitle</key>
-      <string>Add Item</string>
-      <key>UIApplicationShortcutItemType</key>
-      <string>com.yourcompany.net.001</string>
-    </dict>
-  </array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>adds a new item to your list</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Add Item</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.yourcompany.net.001</string>
+		</dict>
+	</array>
 </dict>
 </plist>

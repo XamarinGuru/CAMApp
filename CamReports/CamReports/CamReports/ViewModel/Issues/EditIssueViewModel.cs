@@ -21,7 +21,7 @@ using MediaFile = XLabs.Platform.Services.Media.MediaFile;
 
 namespace CamReports.ViewModel.Issues
 {
-    [ImplementPropertyChanged]
+    //[ImplementPropertyChanged]
     public class EditIssueViewModel : BaseViewModel
     {
         public Issue Issue { get; set; }
