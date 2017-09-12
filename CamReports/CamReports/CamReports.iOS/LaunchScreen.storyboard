@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
+                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="57" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="splash_screen.png">
+                                <rect key="frame" x="-110" y="47" width="600" height="551"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0" height="0"/>
+                                <edgeInsets key="layoutMargins" top="0" left="0" bottom="0" right="0"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile_generic.png" width="95" height="95"/>
+        <image name="slideout.png" width="14" height="15"/>
+        <image name="tab_about.png" width="32" height="30"/>
+        <image name="tab_feed.png" width="32" height="30"/>
+        <image name="Account-Icon.png" width="25" height="25"/>
+        <image name="add-photo.png" width="234" height="137"/>
+        <image name="arrow_icon.png" width="29" height="43"/>
+        <image name="Back.png" width="13" height="21"/>
+        <image name="back_orange.png" width="13" height="21"/>
+        <image name="circle_icon.png" width="28" height="43"/>
+        <image name="circle_plus_icon.png" width="23" height="23"/>
+        <image name="codes/all_code.png" width="25" height="25"/>
+        <image name="codes/cnst_code.png" width="25" height="25"/>
+        <image name="codes/jan_code.png" width="25" height="25"/>
+        <image name="codes/jane_code.png" width="25" height="25"/>
+        <image name="codes/labor_code.png" width="25" height="25"/>
+        <image name="codes/ls_code.png" width="25" height="25"/>
+        <image name="codes/lse_code.png" width="25" height="25"/>
+        <image name="codes/prt_code.png" width="25" height="25"/>
+        <image name="codes/sc_code.png" width="25" height="25"/>
+        <image name="codes/swp_code.png" width="25" height="25"/>
+        <image name="codes/vb_code.png" width="25" height="25"/>
+        <image name="codes/vendor_code.png" width="25" height="25"/>
+        <image name="Create-Icon.png" width="23" height="24"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="eraser_icon.png" width="29" height="44"/>
+        <image name="freehand_icon.png" width="42" height="43"/>
+        <image name="Home-Icon.png" width="25" height="24"/>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon-72.png" width="72" height="72"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="item_arrow.png" width="8" height="13"/>
+        <image name="photo.jpg" width="960" height="1280"/>
+        <image name="Plus-Icon.png" width="17" height="17"/>
+        <image name="radio_button_choosen_circle.png" width="26" height="26"/>
+        <image name="radio_button_empty_circle.png" width="26" height="26"/>
+        <image name="review_report_icon.png" width="18" height="22"/>
+        <image name="splash_screen.png" width="1152" height="1186"/>
+        <image name="tab_code.png" width="32" height="30"/>
+        <image name="tab_inprogress.png" width="17" height="20"/>
+        <image name="tab_location.png" width="21" height="21"/>
+        <image name="tab_show_all.png" width="32" height="30"/>
+        <image name="without_issues.png" width="344" height="86"/>
+    </resources>
+</document>

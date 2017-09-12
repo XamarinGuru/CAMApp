@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:report="clr-namespace:CamReports.Views.Report;assembly=CamReports"
+             x:Class="CamReports.Views.Report.ReportPage" Padding="0,15,0,0">
+    <NavigationPage Title="Property" Icon="Home-Icon.png">
+        <x:Arguments>
+            <report:PropertyInfoPage BindingContext="{Binding}" />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Client" Icon="Account-Icon.png">
+        <x:Arguments>
+            <report:ClientInfoPage BindingContext="{Binding}" />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

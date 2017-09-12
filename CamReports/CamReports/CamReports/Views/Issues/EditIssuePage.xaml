@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CamReports.Controls;assembly=CamReports"
+             xmlns:converters="clr-namespace:CamReports.Converters;assembly=CamReports"
+             xmlns:controls1="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="CamReports.Views.Issues.EditIssuePage"
+             Appearing="EditIssuePage_OnAppearing" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IsNullConverter x:Key="IsNullConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid Margin="0,22,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" BackgroundColor="#ffffff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Button FontSize="17"
+                    Command="{Binding BackCommand}"
+                    Image="Back.png"
+                    TextColor="#0076FF"
+                    Text="Cancel" />
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="Issues" FontSize="17" HorizontalOptions="Center" />
+                <Label Text="{Binding ReportInfo.SiteName}" FontSize="11" TextColor="#111111" HorizontalOptions="Center" />
+            </StackLayout>
+
+            <Button Grid.Column="2" FontSize="17"
+                    Command="{Binding SaveIssueCommand}"
+                    TextColor="#0076FF"
+                    Text="Save"/>
+        </Grid>
+        
+        <StackLayout Grid.Row="1" Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
+                <Label Text="Title:" TextColor="#8C8C8C" VerticalOptions="Center" />
+                <controls1:ExtendedEntry BackgroundColor="Transparent" Text="{Binding Issue.Title, Mode=TwoWay}" Placeholder="Enter title here..." HorizontalOptions="FillAndExpand" HasBorder="False" />
+            </StackLayout>
+
+            <BoxView BackgroundColor="#C8C7CC" Margin="15,5,0,5" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+            <Grid Margin="15,0,30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="67" />
+                    <RowDefinition Height="67" />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Image="add-photo.png" Command="{Binding ChangePhotoCommand}" HorizontalOptions="FillAndExpand" >
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Issue.ImagePath, Converter={StaticResource IsNullConverter}}" Value="True">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="Button" Binding="{Binding Issue.ImagePath, Converter={StaticResource IsNullConverter}}" Value="False">
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Issue.Image}" HorizontalOptions="Fill" IsVisible="False" >
+                    <Image.Triggers>
+                        <DataTrigger TargetType="Image" Binding="{Binding Issue.ImagePath, Converter={StaticResource IsNullConverter}}" Value="True">
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="Image" Binding="{Binding Issue.ImagePath, Converter={StaticResource IsNullConverter}}" Value="False">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
+
+                <Button Grid.Column="1" Grid.Row="0" Text="Edit" Command="{Binding EditPhotoCommand}" HorizontalOptions="End" FontSize="15" TextColor="White" BackgroundColor="#8C8C8C" WidthRequest="72" HeightRequest="29" VerticalOptions="Start"/>
+                <Button Grid.Column="1" Grid.Row="1" Text="Change" Command="{Binding ChangePhotoCommand}" HorizontalOptions="End" FontSize="15" TextColor="White" BackgroundColor="#8C8C8C" WidthRequest="72" HeightRequest="29" VerticalOptions="End"/>
+            </Grid>
+
+            <controls:PlaceholderEditor Text="{Binding Description, Mode=TwoWay}" Placeholder="Type description of issue here" Margin="15,0" />
+        </StackLayout>
+
+        <Grid Grid.Row="2" BackgroundColor="#F9F9F9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1" />
+                <RowDefinition Height="112" />
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="#95989A" HorizontalOptions="FillAndExpand" HeightRequest="1" />
+            <Button Grid.Row="1" Text="Delete Issue" Command="{Binding DeleteIssueCommand}" HeightRequest="44" FontSize="17" TextColor="#FF2D55" VerticalOptions="Center" />
+        </Grid>
+    </Grid>
+</ContentPage>

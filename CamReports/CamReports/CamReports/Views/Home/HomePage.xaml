@@ -1,0 +1,29 @@
+﻿<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:home="clr-namespace:CamReports.Views.Home;assembly=CamReports"
+            x:Class="CamReports.Views.Home.HomePage" Padding="0,15,0,0"
+            Appearing="HomePage_OnAppearing">
+    <NavigationPage Title="Show All" Icon="tab_show_all.png" >
+        <x:Arguments>
+            <home:HomeAllPage BindingContext="{Binding HomeAllViewModel}" />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Code" Icon="{Binding HomeCodesViewModel.CodeIcon}">
+        <x:Arguments>
+            <home:HomeCodePage BindingContext="{Binding HomeCodesViewModel}" />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Nearby" Icon="tab_location.png">
+        <x:Arguments>
+            <home:HomeAllPage BindingContext="{Binding HomeNearbyViewModel}" />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="In Progress" Icon="tab_inprogress.png">
+        <x:Arguments>
+            <home:HomeAllPage BindingContext="{Binding HomeInProgressViewModel}" />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:CamReports.Behaviors;assembly=CamReports"
+             x:Class="CamReports.Views.Issues.IssuesPage"
+             BackgroundColor="#F9F9F9" x:Name="Root" Appearing="IssuesPage_OnAppearing" >
+    <Grid Margin="0,22,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" BackgroundColor="#F9F9F9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Button FontSize="17"
+                    Command="{Binding BackCommand}"
+                    Image="Back.png"
+                    TextColor="#0076FF"
+                    Text="Back" />
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="Issues" FontSize="17" HorizontalOptions="Center" />
+                <Label Text="{Binding ReportInfo.SiteName}" FontSize="11" TextColor="#111111" HorizontalOptions="Center" />
+            </StackLayout>
+
+            <Button Grid.Column="2" FontSize="17"
+                    Command="{Binding CreateIssueCommand}"
+                    Image="Plus-Icon.png"
+                    Margin="0,0,10,0"
+                    HorizontalOptions="End"/>
+        </Grid>
+
+        <!-- <Image Grid.Row="1" Source="without_issues.png" HorizontalOptions="CenterAndExpand" IsVisible="{Binding EmptyIssues}"/> -->
+        
+        <ListView Grid.Row="2" ItemsSource="{Binding Issues}" HasUnevenRows="True" RowHeight="110" SelectedItem="{Binding SelectedIssue}"> 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Name=Root}}" CommandParameter="{Binding }"
+                                      Text="Delete" IsDestructive="True" />
+                        </ViewCell.ContextActions>
+                        <Grid Margin="15,5,5,10" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" />
+                            <StackLayout Grid.Column="1" Orientation="Vertical" Margin="5,0">
+                                <Label Text="{Binding Title}" />
+                                <Label Text="{Binding Description}" FontSize="12" TextColor="Gray" />
+                            </StackLayout>
+                            <Image Grid.Column="2"  Source="item_arrow.png" Margin="0,3,5,0" VerticalOptions="Start" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Row="3" Text="Review and Send" Command="{Binding ReviewCommand}" HorizontalOptions="FillAndExpand"  Margin="15" TextColor="White" BackgroundColor="#AD212E" HeightRequest="35" />
+    </Grid>
+</ContentPage>

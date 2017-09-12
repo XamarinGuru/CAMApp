@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CamReports.Views.LoginPage"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:CamReports.ViewModel;assembly=CamReports"
+             xmlns:controls="clr-namespace:CamReports.Controls;assembly=CamReports">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Image HorizontalOptions="Center" Margin="0,36,0,0" VerticalOptions="Start" Grid.RowSpan="2">
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <OnPlatform.iOS>
+                            <FileImageSource File="splash_screen.png"/>
+                        </OnPlatform.iOS>
+                    </OnPlatform>
+                </Image.Source>
+            </Image>
+
+            <Label IsVisible="{Binding HasError}" Text="Wrong Username or Password" TextColor="Red" HorizontalTextAlignment="End" FontSize="15" FontAttributes="Bold" Margin="0,110,23,0" Grid.Row="1" VerticalOptions="Start" />
+            <!-- <BoxView BackgroundColor="#cd2027" HorizontalOptions="Fill" Height="Auto" Margin="-9,98,-9,0" Grid.Row="1" VerticalOptions="FillAndExpand" /> -->
+            <StackLayout Grid.Row="0" Margin="24,17,0,28"/>
+            <StackLayout Grid.Row="1" Margin="0,130,0,28" BackgroundColor="#cd2027">
+                <Label Text="Username" FontSize="15" Margin="24,15,24,0" TextColor="White"/>
+                <controls:NoAutocorrectEntry x:Name="txtLogin" Margin="24,3,24,5" Text="{Binding Login, Mode=TwoWay}" />
+                <Label Text="Password" Margin="24,5,24,0" FontSize="15" TextColor="White" />
+                <Entry x:Name="txtPassword" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" Margin="24,3,24,5" />
+                <Button Text="Login" Command="{Binding LoginCommand}" HorizontalOptions="End" Margin="24,0" TextColor="Black" BackgroundColor="White" WidthRequest="100" HeightRequest="35"/>
+            </StackLayout>
+            <Grid Grid.Row="0" Grid.RowSpan="2" IsVisible="{Binding IsInProgress}" BackgroundColor="#99FFFFFF">
+                <ActivityIndicator IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

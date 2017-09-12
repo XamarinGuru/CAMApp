@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls1="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:controls="clr-namespace:CamReports.Controls;assembly=CamReports"
+             x:Class="CamReports.Views.SendReport.SendReportPage"
+             BackgroundColor="#F9F9F9">
+    <Grid Margin="0,22,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="130" />
+            </Grid.ColumnDefinitions>
+            <Button FontSize="17"
+                    Command="{Binding BackCommand}"
+                    Image="Back.png"
+                    TextColor="#0076FF"
+                    HorizontalOptions="Start"
+                    Text="Cancel" />
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="Send Report" FontSize="17" HorizontalOptions="Center" />
+                <Label Text="{Binding ReportInfo.SiteName}" FontSize="11" TextColor="#111111" HorizontalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End">
+                <Button Command="{Binding PreviewReportCommand}"
+                        Image="review_report_icon.png"
+                        Margin="0,0,10,0"/>
+
+                <Button FontSize="17"
+                        Command="{Binding SendReportCommand}"
+                        TextColor="#0076FF"
+                        IsVisible="{Binding IsAvailableToSend}"
+                        Text="Send"/>
+            </StackLayout>
+        </Grid>
+        
+        <Grid Grid.Row="1" BackgroundColor="White">
+            <Grid Margin="16,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0,0,12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="22" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" TextColor="#8C8C8C" Text="To:" VerticalOptions="Start" Margin="0,6,0,0" />
+                    <controls1:ExtendedEditor Grid.Column="1" Text="{Binding ToField, Mode=TwoWay}" VerticalOptions="Start" Margin="0" />
+                    <Button Grid.Column="2" Command="{Binding PickToContactsCommand}" Image="circle_plus_icon.png" VerticalOptions="Start" Margin="0" />
+                </Grid>
+                <BoxView Grid.Row="1" BackgroundColor="#C8C7CC" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+                
+                <Grid Grid.Row="2" Margin="0,0,12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="22" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" TextColor="#8C8C8C" Text="Cc:" VerticalOptions="Start" Margin="0,6,0,0" />
+                    <controls1:ExtendedEditor Grid.Column="1" Text="{Binding CcField, Mode=TwoWay}" VerticalOptions="Start" Margin="0" />
+                    <Button Grid.Column="2" Command="{Binding PickCcContactsCommand}"  Image="circle_plus_icon.png" VerticalOptions="Start" Margin="0" />
+                </Grid>
+                <BoxView Grid.Row="3" BackgroundColor="#C8C7CC" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+                <Grid Grid.Row="4" Margin="0,0,12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="22" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" TextColor="#8C8C8C" FontSize="13" Text="Subject:" VerticalOptions="Start" Margin="0,6,0,0" />
+                    <controls1:ExtendedEditor Grid.Column="1" Text="{Binding SubjectField, Mode=TwoWay}" VerticalOptions="Start" Margin="0" HeightRequest="65" />
+                </Grid>
+                <BoxView Grid.Row="5" BackgroundColor="#C8C7CC" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+                <controls:PlaceholderEditor Grid.Row="6" Text="{Binding BodyField, Mode=TwoWay}" Placeholder="Message Body..." VerticalOptions="Start" HeightRequest="400" />
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="0" Grid.RowSpan="3" IsVisible="{Binding IsInProgress}" BackgroundColor="#99FFFFFF">
+            <ActivityIndicator IsRunning="True" VerticalOptions="Center" HorizontalOptions="Center" />
+        </Grid>
+    </Grid>
+</ContentPage>

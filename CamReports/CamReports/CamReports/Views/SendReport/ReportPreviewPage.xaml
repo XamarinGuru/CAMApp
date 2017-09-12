@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CamReports.Controls;assembly=CamReports"
+             x:Class="CamReports.Views.SendReport.ReportPreviewPage">
+    <Grid Margin="0,22,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="130" />
+            </Grid.ColumnDefinitions>
+            <Button FontSize="17"
+                    Command="{Binding BackCommand}"
+                    Image="Back.png"
+                    TextColor="#0076FF"
+                    HorizontalOptions="Start"
+                    Text="Back" />
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Preview" FontSize="17" HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+        
+        <!--<controls:PdfViewer Grid.Row="1" Uri="{Binding Uri}" />-->
+        <ScrollView Grid.Row="1">
+            <Image Source="{Binding Image}" />
+        </ScrollView>
+    </Grid>
+</ContentPage>

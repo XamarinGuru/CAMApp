@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls1="clr-namespace:CamReports.Controls;assembly=CamReports"
+             xmlns:behaviors="clr-namespace:CamReports.Behaviors;assembly=CamReports"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:touch="clr-namespace:CamReports.Effects.Touch;assembly=CamReports"
+             x:Class="CamReports.Views.Issues.EditPhotoPage"
+             x:Name="RootPage"
+             BackgroundColor="Black">
+    <Grid Margin="0,22,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="49" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Button FontSize="17"
+                    Command="{Binding BackCommand}"
+                    Image="back_orange.png"
+                    TextColor="#FF9500"
+                    Text="Cancel" />
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="Issues" FontSize="17" HorizontalOptions="Center" TextColor="#FFFFFF"/>
+                <Label Text="{Binding ReportInfo.SiteName}" FontSize="11" TextColor="#FFFFFF" HorizontalOptions="Center" />
+            </StackLayout>
+
+            <Button Grid.Column="2" FontSize="17"
+                    Command="{Binding SaveCommand}"
+                    CommandParameter="{Binding ResultImage, Source={x:Reference RootPage}}"
+                    TextColor="#FF9500"
+                    Text="Save"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,17,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26" />
+            </Grid.RowDefinitions>
+            <controls1:IconView  Grid.Column="0" Source="{Binding Colors[0].RadioButtonImage}" Foreground="{Binding Colors[0].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[0]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView Grid.Column="1" Source="{Binding Colors[1].RadioButtonImage}" Foreground="{Binding Colors[1].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[1]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView Grid.Column="2" Source="{Binding Colors[2].RadioButtonImage}" Foreground="{Binding Colors[2].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[2]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView Grid.Column="3" Source="{Binding Colors[3].RadioButtonImage}" Foreground="{Binding Colors[3].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[3]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView Grid.Column="4" Source="{Binding Colors[4].RadioButtonImage}" Foreground="{Binding Colors[4].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[4]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView Grid.Column="5" Source="{Binding Colors[5].RadioButtonImage}" Foreground="{Binding Colors[5].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[5]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView Grid.Column="6" Source="{Binding Colors[6].RadioButtonImage}" Foreground="{Binding Colors[6].Color}" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectColorCommand}" CommandParameter="{Binding Colors[6]}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <forms:SKCanvasView x:Name="CanvasView" />
+            <Grid.Effects>
+                <touch:TouchEffect Capture="True"
+                                TouchAction="TouchEffect_OnTouchAction" />
+            </Grid.Effects>
+        </Grid>
+
+        <Grid Grid.Row="3" BackgroundColor="#1B1B1B">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46" />
+            </Grid.RowDefinitions>
+            <controls1:IconView  Grid.Column="0" Source="{Binding Tabs[0].TabImage}" Foreground="{Binding Tabs[0].Color}" HorizontalOptions="Center" Margin="0,2,0,0" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectTabCommand}" CommandParameter="{Binding Tabs[0], Mode=TwoWay}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView  Grid.Column="1" Source="{Binding Tabs[1].TabImage}" Foreground="{Binding Tabs[1].Color}" HorizontalOptions="Center" Margin="0,2,0,0" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectTabCommand}" CommandParameter="{Binding Tabs[1], Mode=TwoWay}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView  Grid.Column="2" Source="{Binding Tabs[2].TabImage}" Foreground="{Binding Tabs[2].Color}" HorizontalOptions="Center" Margin="0,2,0,0" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectTabCommand}" CommandParameter="{Binding Tabs[2], Mode=TwoWay}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+            <controls1:IconView  Grid.Column="3" Source="{Binding Tabs[3].TabImage}" Foreground="{Binding Tabs[3].Color}" HorizontalOptions="Center" Margin="0,2,0,0" >
+                <controls1:IconView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Tapped" Command="{Binding SelectTabCommand}" CommandParameter="{Binding Tabs[3], Mode=TwoWay}" />
+                </controls1:IconView.Behaviors>
+            </controls1:IconView>
+        </Grid>
+        </Grid>
+</ContentPage>
